@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://velmylux.github.io/logo.png">
     <title>Terms & Conditions - Velmylux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 30px; max-width: 600px; margin: 0 auto; color: #333; background-color: #f9f9f9; }
-        h1 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+        /* Reset & Base agar bisa full-width */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f9f9f9; 
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Pembungkus Konten Teks agar tetap rapi di tengah */
+        .content-container {
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 40px 20px;
+        }
+        
+        h1 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; color: #1A1714; }
         p, ul { font-size: 0.95rem; margin-bottom: 15px; }
         ul { padding-left: 20px; }
         .back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: #000; font-weight: bold; font-size: 0.9rem; }
@@ -15,20 +34,23 @@
 </head>
 <body>
 
-    <h1>Terms & Conditions - Velmylux</h1>
-    <p>Welcome to the Velmylux information page. By accessing this page, you agree to the following straightforward terms:</p>
-    <ul>
-        <li><strong>Third-Party Links and Platforms:</strong> When you click on any communication buttons or community links on this page (such as "Let's Chat", "Contact Admin", or links directing to our Instagram Channel Group and Telegram), you will be redirected to third-party platforms outside of our control. Any interactions, communications, and data usage on those platforms are entirely subject to the privacy policies of the respective service providers.</li>
-        <li><strong>Collection Updates:</strong> Any content or preloved pieces featured on our social media are limited and part of a curated personal collection. Further details regarding item reviews or availability are communicated strictly on a personal basis through direct chat.</li>
-        <li><strong>Content Copyright:</strong> All page designs, code architecture, visual review materials, and written testimonial documentation ("What They Say") on this page are the creative property of Velmylux. This content is independently produced solely for documentation and educational purposes for the community, and is strictly protected against duplication or plagiarism without prior written consent.</li>
-    </ul>
+    <!-- KONTEN UTAMA (Dibatasi 600px di tengah) -->
+    <div class="content-container">
+        <h1>Terms & Conditions - Velmylux</h1>
+        <p>Welcome to the Velmylux information page. By accessing this page, you agree to the following straightforward terms:</p>
+        <ul>
+            <li><strong>Third-Party Links and Platforms:</strong> When you click on any communication buttons or community links on this page (such as "Let's Chat", "Contact Admin", or links directing to our Instagram Channel Group and Telegram), you will be redirected to third-party platforms outside of our control. Any interactions, communications, and data usage on those platforms are entirely subject to the privacy policies of the respective service providers.</li>
+            <li><strong>Collection Updates:</strong> Any content or preloved pieces featured on our social media are limited and part of a curated personal collection. Further details regarding item reviews or availability are communicated strictly on a personal basis through direct chat.</li>
+            <li><strong>Content Copyright:</strong> All page designs, code architecture, visual review materials, and written testimonial documentation ("What They Say") on this page are the creative property of Velmylux. This content is independently produced solely for documentation and educational purposes for the community, and is strictly protected against duplication or plagiarism without prior written consent.</li>
+        </ul>
 
-    <!-- TOMBOL BACK & SECTION FOOTER HITAM SELARAS -->
-    <div style="margin-top: 40px;">
-        <a href="index.html" class="back-btn">← Back</a>
+        <div style="margin-top: 40px;">
+            <a href="index.html" class="back-btn">← Back</a>
+        </div>
     </div>
 
-    <div style="background: #1A1714; padding: 40px 24px; text-align: center; border-top: 1px solid rgba(201,184,174,0.1); font-family: 'Montserrat', sans-serif; margin: 50px -30px -30px -30px; clear: both;">
+    <!-- FOOTER HITAM PREMIUM (Bebas & Meregang 100% Full Screen) -->
+    <div style="background: #1A1714; padding: 40px 24px; text-align: center; border-top: 1px solid rgba(201,184,174,0.1); width: 100%; clear: both;">
         <!-- Logo -->
         <img src="https://velmylux.github.io/logo.png" alt="velmylux" style="width: 160px; height: 60px; object-fit: contain; margin: 0 auto 8px; display: block; opacity: 0.9;">
         
