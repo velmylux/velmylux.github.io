@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://velmylux.github.io/logo.png">
     <title>Terms & Conditions - Velmylux</title>
-    <!-- Menggunakan font gabungan asli dari index.html -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base agar bisa full-width */
@@ -29,6 +28,11 @@
             background-color: var(--bg); /* Menyamakan warna background krem index.html */
             width: 100%;
             overflow-x: hidden;
+
+            /* PERBAIKAN STICKY FOOTER: Memaksa body memenuhi tinggi layar */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         /* Pembungkus Konten Teks agar tetap rapi di tengah */
@@ -36,6 +40,9 @@
             max-width: 600px; 
             margin: 0 auto; 
             padding: 60px 24px;
+
+            /* PERBAIKAN STICKY FOOTER: Mengambil sisa ruang kosong agar footer terdorong ke dasar */
+            flex: 1;
         }
         
         /* Menggunakan font Cormorant Garamond pada judul agar senada dengan index */
@@ -113,7 +120,6 @@
 </head>
 <body>
 
-    <!-- KONTEN UTAMA (Dibatasi 600px di tengah) -->
     <div class="content-container">
         <h1>Terms & Conditions</h1>
         <p>Welcome to the Velmylux information page. By accessing this page, you agree to the following straightforward terms:</p>
@@ -128,10 +134,8 @@
         </div>
     </div>
 
-    <!-- WADAH FOOTER GLOBAL -->
     <div id="global-footer" class="footer"></div>
 
-    <!-- SCRIPT PEMANGGIL FOOTER -->
     <script src="footer.js"></script>
 
 </body>
