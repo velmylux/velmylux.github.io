@@ -5,25 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://velmylux.github.io/logo.png">
     <title>Disclaimer - Velmylux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 30px; max-width: 600px; margin: 0 auto; color: #333; background-color: #f9f9f9; }
-        h1 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
-        p, ul { font-size: 0.95rem; margin-bottom: 15px; }
+        /* Reset & Base agar bisa full-width */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* SINKRONISASI WARNA ASLI INDEX.HTML */
+        :root {
+            --bg:        #F0EAE4;
+            --bg-dark:   #1A1714;
+            --accent:    #C9B8AE;
+            --text-mid:  #5C504A;
+            --text-light:#9C8E88;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: var(--bg); /* Menyamakan warna background krem index.html */
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Pembungkus Konten Teks agar tetap rapi di tengah */
+        .content-container {
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 60px 24px;
+        }
+
+        /* Menggunakan font Cormorant Garamond pada judul agar senada dengan index */
+        h1 { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem; 
+            font-weight: 400;
+            margin-bottom: 24px; 
+            text-align: center; 
+            color: var(--bg-dark); 
+        }
+
+        p, ul { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-mid); }
         ul { padding-left: 20px; }
-        .back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: #000; font-weight: bold; font-size: 0.9rem; }
+        
+        .back-btn { 
+            display: inline-block; 
+            text-decoration: none; 
+            color: var(--text-mid); 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px;
+        }
+
+        /* ======================================================== */
+        /* BAGIAN 1: CSS FOOTER ASLI INDEX.HTML DISISIPKAN DI SINI  */
+        /* ======================================================== */
+        .footer {
+            background: var(--bg-dark);
+            padding: 24px;
+            text-align: center;
+            border-top: 1px solid rgba(201,184,174,0.1);
+            width: 100%;
+            clear: both;
+        }
+
+        .footer-logo {
+            width: 160px;
+            height: 60px;
+            object-fit: contain;
+            margin: 0 auto 8px;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .footer-tagline {
+            font-size: 9px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .footer-official {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-top: 10px;
+            opacity: 0.55;
+        }
+
+        .footer-official a {
+            color: var(--accent);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Disclaimer - Velmylux</h1>
-    <p>Please read the following points carefully regarding the nature of the content and information on Velmylux:</p>
-    <ul>
-        <li><strong>No Official Affiliation:</strong> Velmylux is an independent platform managed by luxury enthusiasts and preloved curators. We are <strong>not affiliated, sponsored, associated, or officially connected</strong> with any of the fashion brands featured in our video or image content.</li>
-        <li><strong>Brand Copyrights:</strong> All brand names, logos, symbols, and trademarks mentioned or displayed within our content are the sole property of their respective official brand owners.</li>
-        <li><strong>Nature of Items:</strong> The pieces discussed or displayed are personal/preloved items legally acquired from the secondary market. Item condition assessments are conducted independently, transparently, and objectively based on our personal curation standards.</li>
-    </ul>
+    <div class="content-container">
+        <h1>Disclaimer</h1>
+        <p>Please read the following points carefully regarding the nature of the content and information on Velmylux:</p>
+        <ul>
+            <li><strong>No Official Affiliation:</strong> Velmylux is an independent platform managed by luxury enthusiasts and preloved curators. We are <strong>not affiliated, sponsored, associated, or officially connected</strong> with any of the fashion brands featured in our video or image content.</li>
+            <li><strong>Brand Copyrights:</strong> All brand names, logos, symbols, and trademarks mentioned or displayed within our content are the sole property of their respective official brand owners.</li>
+            <li><strong>Nature of Items:</strong> The pieces discussed or displayed are personal/preloved items legally acquired from the secondary market. Item condition assessments are conducted independently, transparently, and objectively based on our personal curation standards.</li>
+        </ul>
 
-    <a href="index.html" class="back-btn">← Back</a>
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="index.html" class="back-btn">← Back to Community</a>
+        </div>
+    </div>
+
+    <div id="global-footer" class="footer"></div>
+
+    <script src="footer.js"></script>
 
 </body>
 </html>
