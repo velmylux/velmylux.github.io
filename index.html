@@ -31,7 +31,6 @@
     overflow-x: hidden;
   }
 
-  /* HERO */
   .hero {
     background: var(--bg-dark);
     padding: 60px 24px 44px;
@@ -51,22 +50,14 @@
     pointer-events: none;
   }
 
-  .hero-logo {
-    width: 180px;
-    margin: 0 auto 20px;
+  .footer-logo {
+    width: 160px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto 8px;
     display: block;
-    opacity: 0.92;
-    filter: brightness(0) invert(1);
+    opacity: 0.9;
   }
-
-    .footer-logo {
-  width: 160px;
-  height: 60px;
-  object-fit: contain;
-  margin: 0 auto 8px;
-  display: block;
-  opacity: 0.9;
-}
 
   .hero-eyebrow {
     font-size: 9px;
@@ -106,7 +97,6 @@
     opacity: 0.5;
   }
 
-  /* STATS */
   .stats {
     background: var(--accent);
     display: flex;
@@ -135,7 +125,6 @@
     margin-top: 3px;
   }
 
-  /* REVIEWS */
   .reviews-section {
     padding: 48px 20px 28px;
     max-width: 760px;
@@ -254,14 +243,6 @@
     gap: 6px;
   }
 
-  .review-item {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--accent-mid);
-    text-transform: uppercase;
-  }
-
   .review-date {
     font-size: 10px;
     color: var(--text-light);
@@ -285,7 +266,6 @@
     background: var(--green);
   }
 
-  /* LEAVE REVIEW */
   .leave-review {
     max-width: 760px;
     margin: 0 auto;
@@ -350,21 +330,11 @@
     opacity: 0.6;
   }
 
-  /* FOOTER */
   .footer {
     background: var(--bg-dark);
     padding: 24px;
     text-align: center;
     border-top: 1px solid rgba(201,184,174,0.1);
-  }
-
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--accent);
-    letter-spacing: 4px;
-    text-transform: uppercase;
   }
 
   .footer-tagline {
@@ -393,7 +363,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">velmylux · verified experiences</div>
+  <div class="hero-eyebrow">velmylux · community reviews</div>
   <h1 class="hero-title">What They <em>Say</em></h1>
   <p class="hero-sub">Real stories from our community</p>
   <div class="hero-divider"></div>
@@ -411,13 +381,13 @@
   </div>
   <div class="stat">
     <div class="stat-number">50+</div>
-    <div class="stat-label">Happy Clients</div>
+    <div class="stat-label">Members</div>
   </div>
 </div>
 
 <!-- REVIEWS -->
 <div class="reviews-section">
-  <div class="section-label">Client Reviews</div>
+  <div class="section-label">Community Reviews</div>
   <div class="reviews-grid">
 
     <div class="review-card">
@@ -433,7 +403,6 @@
       </div>
       <p class="review-text">"The bag arrived in pristine condition — exactly as described. Packaging was so thoughtful. Definitely my go-to for preloved luxury pieces now."</p>
       <div class="review-footer">
-        <span class="review-item">LV Neverfull MM</span>
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">May 2025</span>
       </div>
@@ -452,7 +421,6 @@
       </div>
       <p class="review-text">"Third purchase and still impressed every time. Admin is super responsive and honest about the condition. 100% authentic pieces, no doubt."</p>
       <div class="review-footer">
-        <span class="review-item">Gucci Marmont</span>
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Apr 2025</span>
       </div>
@@ -471,7 +439,6 @@
       </div>
       <p class="review-text">"I was hesitant at first buying preloved online, but velmylux changed that. Transparent, trustworthy, and the item was in excellent shape."</p>
       <div class="review-footer">
-        <span class="review-item">Chanel Classic Flap</span>
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Mar 2025</span>
       </div>
@@ -490,7 +457,6 @@
       </div>
       <p class="review-text">"Smooth transaction from start to finish. The photos matched perfectly and admin answered all my questions patiently. Will definitely return!"</p>
       <div class="review-footer">
-        <span class="review-item">Prada Re-Edition</span>
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Feb 2025</span>
       </div>
@@ -503,9 +469,9 @@
 <div class="leave-review">
   <div class="leave-review-card">
     <h2 class="leave-review-title">Share Your Experience</h2>
-    <p class="leave-review-sub">Have you shopped with us? We'd love to hear from you.<br>A valid order number is required to submit a review.</p>
+    <p class="leave-review-sub">Have you been part of our community? We'd love to hear from you.<br>A valid reference number is required to submit a review.</p>
     <div class="requirement-note">
-      <span>🔒 Valid Order Number Required</span>
+      <span>🔒 Valid Reference Number Required</span>
     </div>
     <br>
     <div class="review-btn">Leave a Review</div>
