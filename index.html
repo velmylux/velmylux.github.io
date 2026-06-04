@@ -617,9 +617,9 @@
 <div class="leave-review">
   <div class="leave-review-card">
     <h2 class="leave-review-title">Share Your Experience</h2>
-    <p class="leave-review-sub">Have you been part of our community? We'd love to hear from you.<br>A valid reference number is required to submit a review.</p>
+    <p class="leave-review-sub">Have you been part of our community? We'd love to hear from you.<br>A valid member code is required to submit a review.</p>
     <div class="requirement-note">
-      <span>🔒 Valid Reference Number Required</span>
+      <span>🔒 Valid Member Code Required</span>
     </div>
     <br>
     <div class="review-btn">Leave a Review</div>
@@ -640,12 +640,12 @@
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-eyebrow">velmylux · community</div>
     <h2 class="modal-title">Leave a Review</h2>
-    <p class="modal-sub">A valid reference number from your transaction is required to submit a review.</p>
+    <p class="modal-sub">A valid member code from your experience with us is required to submit a review.</p>
 
     <div class="form-group">
-      <label class="form-label">Reference Number *</label>
-      <input class="form-input" type="text" id="refNumber" placeholder="e.g. VLX-2025-XXXX">
-      <p class="form-note">🔒 Your reference number was provided after your transaction.</p>
+      <label class="form-label">Member Code *</label>
+      <input class="form-input" type="text" id="refNumber" placeholder="e.g. VLX-XXXX">
+      <p class="form-note">🔒 Your member code was provided after your experience with us.</p>
     </div>
 
     <div class="form-group">
@@ -659,7 +659,7 @@
     </div>
 
     <div class="form-error" id="formError">
-      ❌ Invalid reference number. Please check your transaction details and try again.
+      ❌ Invalid member code. Please check your participation details and try again.
     </div>
 
     <button class="form-submit" onclick="submitReview()">Submit Review</button>
@@ -699,8 +699,8 @@
       return;
     }
 
-    // Always invalid — no real reference numbers exist
-    error.textContent = '❌ Invalid reference number. Please check your transaction details and try again.';
+    // Always invalid — no real member codes exist
+    error.textContent = '❌ Invalid member code. Please check your participation details and try again.';
     error.classList.add('show');
   }
 </script>
