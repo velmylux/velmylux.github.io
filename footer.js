@@ -6,13 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
             <img class="footer-logo" src="https://velmylux.github.io/logo.png" alt="velmylux">
             <div class="footer-tagline">Preloved Luxury Enthusiast</div>
             
-            <div style="margin-top: 20px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7;">
-                <a href="privacy.html" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: 500;">Privacy Policy</a> | 
-                <a href="terms.html" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: 500;">Terms & Conditions</a> | 
-                <a href="disclaimer.html" style="color: var(--accent); text-decoration: none; margin: 0 10px; font-weight: 500;">Disclaimer</a>
-            </div>
-            
-            <div class="footer-official" style="margin-top: 15px; font-size: 9px; color: var(--text-light); opacity: 0.4;">
+            <nav style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 8px 16px;
+                margin-top: 16px;
+                padding: 0 16px;
+            ">
+                <a href="privacy.html" style="color:#C9B8AE;text-decoration:none;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;">Privacy Policy</a>
+                <span style="color:#C9B8AE;opacity:0.4;font-size:10px;">|</span>
+                <a href="terms.html" style="color:#C9B8AE;text-decoration:none;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;">Terms & Conditions</a>
+                <span style="color:#C9B8AE;opacity:0.4;font-size:10px;">|</span>
+                <a href="disclaimer.html" style="color:#C9B8AE;text-decoration:none;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;">Disclaimer</a>
+            </nav>
+
+            <div style="margin-top:14px;font-size:10px;color:#9C8E88;opacity:0.5;letter-spacing:1px;">
                 © 2026 Velmylux. All rights reserved.
             </div>
         `;
