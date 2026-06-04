@@ -1,47 +1,299 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | velmylux</title>
-    <!-- Pastikan variabel CSS ini cocok dengan style footer-mu -->
-    <style>
-        :root { --accent: #332C28; --text-light: #555; }
-        body {
-            background: linear-gradient(180deg, #E5DDD5 0%, #C2B6AC 100%);
-            margin: 0; padding: 40px 20px;
-            font-family: 'Montserrat', sans-serif;
-            display: flex; justify-content: center; min-height: 100vh; text-align: center;
-        }
-        .container { width: 100%; max-width: 500px; }
-        .avatar { width: 100px; height: 100px; border-radius: 50%; background: #fff; margin-bottom: 15px; }
-        .name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #1A1714; }
-        .bio { font-size: 16px; color: #1A1714; margin-bottom: 30px; }
-        .link-btn {
-            display: block; background: #E3D9CE; border: 1px solid #1A1714;
-            color: #1A1714; padding: 18px; margin-bottom: 15px;
-            border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s;
-        }
-        .link-btn:hover { background: #1A1714; color: #fff; }
-        /* Style tambahan agar footer rapi */
-        .footer-logo { width: 50px; margin-top: 30px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://velmylux.github.io/logo.png">
+<title>velmylux</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F0EAE4;
+    --bg-dark: #1A1714;
+    --accent: #C9B8AE;
+    --accent-mid: #A8948A;
+    --text: #1A1714;
+    --text-light: #9C8E88;
+    --border: #E0D6CF;
+    --white: #FDFAF8;
+  }
+
+  body {
+    background: var(--bg);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* BACKGROUND TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(201,184,174,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,184,174,0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* AVATAR */
+  .avatar-wrap {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    display: block;
+    background: var(--border);
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,184,174,0.4);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+  }
+
+  /* NAME & BIO */
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .bio {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 auto 40px;
+    opacity: 0.5;
+  }
+
+  /* LINKS */
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: rgba(253,250,248,0.8);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .link-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+    transform-origin: bottom;
+  }
+
+  .link-btn:hover {
+    background: rgba(253,250,248,1);
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .link-btn:hover::before {
+    transform: scaleY(1);
+  }
+
+  .link-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .link-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .icon-wa { background: #E8F5F0; }
+  .icon-tg { background: #E8F0F8; }
+  .icon-rv { background: #F5EEE8; }
+
+  .link-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .link-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .link-sub {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+  }
+
+  .link-arrow {
+    font-size: 14px;
+    color: var(--accent-mid);
+    transition: transform 0.2s;
+  }
+
+  .link-btn:hover .link-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ANIMATION */
+  .link-btn {
+    animation: fadeUp 0.5s ease both;
+  }
+  .link-btn:nth-child(1) { animation-delay: 0.1s; }
+  .link-btn:nth-child(2) { animation-delay: 0.18s; }
+  .link-btn:nth-child(3) { animation-delay: 0.26s; }
+  .link-btn:nth-child(4) { animation-delay: 0.34s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* FOOTER */
+  #footer-placeholder { width: 100%; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <img class="avatar" src="https://velmylux.github.io/logo.png" alt="Profile">
-        <h1 class="name">velmylux</h1>
-        <p class="bio">Preloved Luxury Enthusiast 👜</p>
 
-        <!-- Tombol Link -->
-        <a href="https://wa.me/nomor_kamu" class="link-btn">Chat Admin (WhatsApp)</a>
-        <a href="https://t.me/username_kamu" class="link-btn">Telegram Channel</a>
-        <a href="../index.html" class="link-btn">Back to Home</a>
-        
-        <!-- ID ini harus sama dengan yang di footer.js -->
-        <div id="global-footer"></div>
-        
-        <script src="../footer.js"></script>
-    </div>
+<div class="container">
+
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <img class="avatar" src="https://velmylux.github.io/logo.png" alt="velmylux">
+  </div>
+
+  <h1 class="name">velmylux</h1>
+  <p class="bio">Preloved Luxury Enthusiast 👜</p>
+  <div class="divider"></div>
+
+  <div class="links">
+
+    <a href="https://wa.me/628xxxxxxxxx" class="link-btn" target="_blank">
+      <div class="link-btn-left">
+        <div class="link-icon icon-wa">💬</div>
+        <div class="link-label">
+          <span class="link-title">Let's Chat 😊</span>
+          <span class="link-sub">WhatsApp</span>
+        </div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://t.me/namaChannel" class="link-btn" target="_blank">
+      <div class="link-btn-left">
+        <div class="link-icon icon-tg">✈️</div>
+        <div class="link-label">
+          <span class="link-title">Latest Collection Updates</span>
+          <span class="link-sub">Telegram Channel</span>
+        </div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://t.me/namaAdmin" class="link-btn" target="_blank">
+      <div class="link-btn-left">
+        <div class="link-icon icon-tg">✈️</div>
+        <div class="link-label">
+          <span class="link-title">Contact Admin Directly</span>
+          <span class="link-sub">Telegram Personal</span>
+        </div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="./what-they-say.html" class="link-btn">
+      <div class="link-btn-left">
+        <div class="link-icon icon-rv">💬</div>
+        <div class="link-label">
+          <span class="link-title">What They Say 💬</span>
+          <span class="link-sub">Community Reviews</span>
+        </div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+</div>
+
+<script src="./footer.js"></script>
 </body>
 </html>
