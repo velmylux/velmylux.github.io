@@ -52,32 +52,22 @@
     flex: 1;
   }
 
-  /* AVATAR — fixed size, circular crop */
+  /* AVATAR — logo display, no crop */
   .avatar-wrap {
     position: relative;
     margin-bottom: 20px;
-    width: 90px;
-    height: 90px;
     flex-shrink: 0;
   }
 
   .avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid var(--border);
+    width: 160px;
+    height: auto;
     display: block;
+    opacity: 0.9;
   }
 
   .avatar-ring {
-    position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-    border: 1px solid rgba(201,184,174,0.4);
-    animation: pulse 3s ease-in-out infinite;
-    pointer-events: none;
+    display: none;
   }
 
   @keyframes pulse {
