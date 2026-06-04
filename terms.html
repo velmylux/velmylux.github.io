@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://velmylux.github.io/logo.png">
     <title>Terms & Conditions - Velmylux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Menggunakan font gabungan asli dari index.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base agar bisa full-width */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         
+        /* 1. SINKRONISASI WARNA ASLI INDEX.HTML (Paling Penting!) */
+        :root {
+            --bg:        #F0EAE4;
+            --bg-dark:   #1A1714;
+            --accent:    #C9B8AE;
+            --accent-mid:#A8948A;
+            --text:      #1A1714;
+            --text-mid:  #5C504A;
+            --text-light:#9C8E88;
+        }
+        
         body { 
             font-family: 'Montserrat', sans-serif; 
             line-height: 1.6; 
-            color: #333; 
-            background-color: #f9f9f9; 
+            color: var(--text); 
+            background-color: var(--bg); /* Menyamakan warna background krem index.html */
             width: 100%;
             overflow-x: hidden;
         }
@@ -23,20 +35,87 @@
         .content-container {
             max-width: 600px; 
             margin: 0 auto; 
-            padding: 40px 20px;
+            padding: 60px 24px;
         }
         
-        h1 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; color: #1A1714; }
-        p, ul { font-size: 0.95rem; margin-bottom: 15px; }
+        /* Menggunakan font Cormorant Garamond pada judul agar senada dengan index */
+        h1 { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem; 
+            font-weight: 400;
+            margin-bottom: 24px; 
+            text-align: center; 
+            color: var(--bg-dark); 
+        }
+        
+        p, ul { 
+            font-size: 0.95rem; 
+            margin-bottom: 15px; 
+            color: var(--text-mid);
+        }
+        
         ul { padding-left: 20px; }
-        .back-btn { display: inline-block; margin-top: 30px; text-decoration: none; color: #000; font-weight: bold; font-size: 0.9rem; }
+        
+        .back-btn { 
+            display: inline-block; 
+            text-decoration: none; 
+            color: var(--text-mid); 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        
+        .back-btn:hover {
+            color: var(--bg-dark);
+        }
+
+        /* 2. SINKRONISASI STYLE CSS FOOTER ASLI INDEX.HTML */
+        .footer {
+            background: var(--bg-dark);
+            padding: 24px;
+            text-align: center;
+            border-top: 1px solid rgba(201,184,174,0.1);
+            width: 100%;
+            clear: both;
+        }
+
+        .footer-logo {
+            width: 160px;
+            height: 60px;
+            object-fit: contain;
+            margin: 0 auto 8px;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .footer-tagline {
+            font-size: 9px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .footer-official {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-top: 10px;
+            opacity: 0.55;
+        }
+
+        .footer-official a {
+            color: var(--accent);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
     <!-- KONTEN UTAMA (Dibatasi 600px di tengah) -->
     <div class="content-container">
-        <h1>Terms & Conditions - Velmylux</h1>
+        <h1>Terms & Conditions</h1>
         <p>Welcome to the Velmylux information page. By accessing this page, you agree to the following straightforward terms:</p>
         <ul>
             <li><strong>Third-Party Links and Platforms:</strong> When you click on any communication buttons or community links on this page (such as "Let's Chat", "Contact Admin", or links directing to our Instagram Channel Group and Telegram), you will be redirected to third-party platforms outside of our control. Any interactions, communications, and data usage on those platforms are entirely subject to the privacy policies of the respective service providers.</li>
@@ -44,16 +123,16 @@
             <li><strong>Content Copyright:</strong> All page designs, code architecture, visual review materials, and written testimonial documentation ("What They Say") on this page are the creative property of Velmylux. This content is independently produced solely for documentation and educational purposes for the community, and is strictly protected against duplication or plagiarism without prior written consent.</li>
         </ul>
 
-        <div style="margin-top: 40px;">
-            <a href="index.html" class="back-btn">← Back</a>
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="index.html" class="back-btn">← Back to Community</a>
         </div>
     </div>
 
     <!-- WADAH FOOTER GLOBAL -->
-<div id="global-footer" class="footer"></div>
+    <div id="global-footer" class="footer"></div>
 
-<!-- SCRIPT PEMANGGIL FOOTER -->
-<script src="footer.js"></script>
+    <!-- SCRIPT PEMANGGIL FOOTER -->
+    <script src="footer.js"></script>
 
 </body>
 </html>
