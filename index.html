@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What They Say – velmylux</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #F0EAE4;
+    --bg-card:   #FAF7F5;
+    --bg-dark:   #1A1714;
+    --border:    #E0D6CF;
+    --accent:    #C9B8AE;
+    --accent-mid:#A8948A;
+    --text:      #1A1714;
+    --text-mid:  #5C504A;
+    --text-light:#9C8E88;
+    --white:     #FDFAF8;
+    --green:     #4A6B52;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--bg-dark);
+    padding: 60px 24px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,184,174,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-logo {
+    width: 180px;
+    margin: 0 auto 20px;
+    display: block;
+    opacity: 0.92;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-logo {
+    width: 140px;
+    margin: 0 auto 8px;
+    display: block;
+    opacity: 0.75;
+    filter: brightness(0) invert(1);
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 8vw, 52px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-top: 12px;
+  }
+
+  .hero-divider {
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+    margin: 20px auto 0;
+    opacity: 0.5;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 14px 24px;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--bg-dark);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-dark);
+    opacity: 0.65;
+    margin-top: 3px;
+  }
+
+  /* REVIEWS */
+  .reviews-section {
+    padding: 48px 20px 28px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .review-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 26px 26px 22px;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .review-card:nth-child(1) { animation-delay: 0.05s; }
+  .review-card:nth-child(2) { animation-delay: 0.1s; }
+  .review-card:nth-child(3) { animation-delay: 0.15s; }
+  .review-card:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .review-card::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    color: var(--accent);
+    opacity: 0.18;
+    position: absolute;
+    top: 6px; left: 16px;
+    line-height: 1;
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-mid);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+
+  .reviewer-location {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .stars { display: flex; gap: 2px; }
+  .star  { color: var(--accent-mid); font-size: 12px; }
+
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-mid);
+    padding-left: 4px;
+  }
+
+  .review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .review-item {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--accent-mid);
+    text-transform: uppercase;
+  }
+
+  .review-date {
+    font-size: 10px;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .verified-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  /* LEAVE REVIEW */
+  .leave-review {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .leave-review-card {
+    background: var(--bg-dark);
+    border-radius: 2px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .leave-review-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .leave-review-sub {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+    line-height: 1.7;
+  }
+
+  .requirement-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,184,174,0.08);
+    border: 1px solid rgba(201,184,174,0.25);
+    border-radius: 2px;
+    padding: 8px 16px;
+    margin-bottom: 22px;
+  }
+
+  .requirement-note span {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .review-btn {
+    display: inline-block;
+    padding: 13px 34px;
+    border: 1px solid var(--accent-mid);
+    color: var(--accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bg-dark);
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid rgba(201,184,174,0.1);
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .footer-tagline {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
+  .footer-official {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 10px;
+    opacity: 0.55;
+  }
+
+  .footer-official a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">velmylux · verified experiences</div>
+  <h1 class="hero-title">What They <em>Say</em></h1>
+  <p class="hero-sub">Real stories from our community</p>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Authentic</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">★ 5.0</div>
+    <div class="stat-label">Rating</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">50+</div>
+    <div class="stat-label">Happy Clients</div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews-section">
+  <div class="section-label">Client Reviews</div>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">S</div>
+          <div>
+            <div class="reviewer-name">S*****a</div>
+            <div class="reviewer-location">Singapore</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <p class="review-text">"The bag arrived in pristine condition — exactly as described. Packaging was so thoughtful. Definitely my go-to for preloved luxury pieces now."</p>
+      <div class="review-footer">
+        <span class="review-item">LV Neverfull MM</span>
+        <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
+        <span class="review-date">May 2025</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">N</div>
+          <div>
+            <div class="reviewer-name">N*****i</div>
+            <div class="reviewer-location">Singapore</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <p class="review-text">"Third purchase and still impressed every time. Admin is super responsive and honest about the condition. 100% authentic pieces, no doubt."</p>
+      <div class="review-footer">
+        <span class="review-item">Gucci Marmont</span>
+        <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
+        <span class="review-date">Apr 2025</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">R</div>
+          <div>
+            <div class="reviewer-name">R*****a</div>
+            <div class="reviewer-location">Singapore</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <p class="review-text">"I was hesitant at first buying preloved online, but velmylux changed that. Transparent, trustworthy, and the item was in excellent shape."</p>
+      <div class="review-footer">
+        <span class="review-item">Chanel Classic Flap</span>
+        <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
+        <span class="review-date">Mar 2025</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">A</div>
+          <div>
+            <div class="reviewer-name">A*****h</div>
+            <div class="reviewer-location">Singapore</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <p class="review-text">"Smooth transaction from start to finish. The photos matched perfectly and admin answered all my questions patiently. Will definitely return!"</p>
+      <div class="review-footer">
+        <span class="review-item">Prada Re-Edition</span>
+        <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
+        <span class="review-date">Feb 2025</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LEAVE REVIEW (decorative) -->
+<div class="leave-review">
+  <div class="leave-review-card">
+    <h2 class="leave-review-title">Share Your Experience</h2>
+    <p class="leave-review-sub">Have you shopped with us? We'd love to hear from you.<br>A valid order number is required to submit a review.</p>
+    <div class="requirement-note">
+      <span>🔒 Valid Order Number Required</span>
+    </div>
+    <br>
+    <div class="review-btn">Leave a Review</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img class="footer-logo" src="https://i.ibb.co.com/zTqz0xqz/Times-New-Roman.png" alt="velmylux">
+  <div class="footer-tagline">Preloved Luxury Enthusiast</div>
+  <div class="footer-official">Official: <a href="https://linktr.ee/velmylux">linktr.ee/velmylux</a></div>
+</div>
+
+</body>
+</html>
