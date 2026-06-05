@@ -52,7 +52,6 @@
     flex: 1;
   }
 
-  /* AVATAR — logo display, no crop */
   .avatar-wrap {
     position: relative;
     margin-bottom: 2px;
@@ -67,16 +66,8 @@
     opacity: 0.9;
   }
 
-  .avatar-ring {
-    display: none;
-  }
+  .avatar-ring { display: none; }
 
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-  }
-
-  /* NAME & BIO */
   .name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
@@ -118,6 +109,7 @@
     margin-bottom: 32px;
     opacity: 0.85;
   }
+
   .links {
     width: 100%;
     display: flex;
@@ -144,10 +136,11 @@
     text-align: center;
   }
 
-  .link-btn:nth-child(1) { animation-delay: 0.1s; }
-  .link-btn:nth-child(2) { animation-delay: 0.18s; }
-  .link-btn:nth-child(3) { animation-delay: 0.26s; }
-  .link-btn:nth-child(4) { animation-delay: 0.34s; }
+  .link-btn:nth-child(1) { animation-delay: 0.08s; }
+  .link-btn:nth-child(2) { animation-delay: 0.16s; }
+  .link-btn:nth-child(3) { animation-delay: 0.24s; }
+  .link-btn:nth-child(4) { animation-delay: 0.32s; }
+  .link-btn:nth-child(5) { animation-delay: 0.40s; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -172,9 +165,7 @@
     box-shadow: 0 8px 24px rgba(201,184,174,0.2);
   }
 
-  .link-btn:hover::before {
-    transform: scaleY(1);
-  }
+  .link-btn:hover::before { transform: scaleY(1); }
 
   .link-title {
     font-family: 'Montserrat', sans-serif;
@@ -193,7 +184,6 @@
     text-transform: uppercase;
   }
 
-  /* FOOTER — full width, dark background */
   #global-footer {
     width: 100vw;
     background: var(--bg-dark);
@@ -246,7 +236,7 @@
     </a>
 
     <a href="https://t.me/namaChannel" class="link-btn" target="_blank">
-      <span class="link-title">Latest Collection Updates</span>
+      <span class="link-title">Curated Finds</span>
       <span class="link-sub">Telegram Channel</span>
     </a>
 
@@ -269,9 +259,7 @@
 
 </div>
 
-<!-- FOOTER FULL WIDTH — outside container -->
 <div id="global-footer"></div>
-
 <script src="./footer.js"></script>
 </body>
 </html>
