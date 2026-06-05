@@ -31,6 +31,22 @@
     overflow-x: hidden;
   }
 
+  /* BACK BUTTON — bottom, like other pages */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-btn:hover { color: var(--text); }
+
   .hero {
     background: var(--bg-dark);
     padding: 60px 24px 44px;
@@ -372,9 +388,7 @@
     backdrop-filter: blur(4px);
   }
 
-  .modal-overlay.active {
-    display: flex;
-  }
+  .modal-overlay.active { display: flex; }
 
   .modal {
     background: #FAF7F5;
@@ -427,9 +441,7 @@
     margin-bottom: 24px;
   }
 
-  .form-group {
-    margin-bottom: 16px;
-  }
+  .form-group { margin-bottom: 16px; }
 
   .form-label {
     display: block;
@@ -454,14 +466,9 @@
     transition: border 0.2s;
   }
 
-  .form-input:focus, .form-textarea:focus {
-    border-color: #C9B8AE;
-  }
+  .form-input:focus, .form-textarea:focus { border-color: #C9B8AE; }
 
-  .form-textarea {
-    height: 90px;
-    resize: none;
-  }
+  .form-textarea { height: 90px; resize: none; }
 
   .form-note {
     font-size: 10px;
@@ -481,9 +488,7 @@
     border-radius: 2px;
   }
 
-  .form-error.show {
-    display: block;
-  }
+  .form-error.show { display: block; }
 
   .form-submit {
     width: 100%;
@@ -501,16 +506,14 @@
     transition: background 0.2s;
   }
 
-  .form-submit:hover {
-    background: #2C2826;
-  }
-
+  .form-submit:hover { background: #2C2826; }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
+  <a href="./index.html" class="back-btn">← Back</a>
   <div class="hero-eyebrow">velmylux · community reviews</div>
   <h1 class="hero-title">What They <em>Say</em></h1>
   <p class="hero-sub">Real stories from our community</p>
@@ -567,7 +570,7 @@
         </div>
         <div class="stars">★★★★★</div>
       </div>
-      <p class="review-text">"Third purchase and still impressed every time. Admin is super responsive and honest about the condition. 100% authentic pieces, no doubt."</p>
+      <p class="review-text">"Third time and still impressed every time. Admin is super responsive and honest about the condition. Very trustworthy, no doubt."</p>
       <div class="review-footer">
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Apr 2025</span>
@@ -585,7 +588,7 @@
         </div>
         <div class="stars">★★★★★</div>
       </div>
-      <p class="review-text">"I was hesitant at first buying preloved online, but velmylux changed that. Transparent, trustworthy, and the item was in excellent shape."</p>
+      <p class="review-text">"I was hesitant at first, but velmylux changed that. Transparent, trustworthy, and the item was in excellent shape."</p>
       <div class="review-footer">
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Mar 2025</span>
@@ -603,7 +606,7 @@
         </div>
         <div class="stars">★★★★★</div>
       </div>
-      <p class="review-text">"Smooth transaction from start to finish. The photos matched perfectly and admin answered all my questions patiently. Will definitely return!"</p>
+      <p class="review-text">"Smooth experience from start to finish. The photos matched perfectly and admin answered all my questions patiently. Will definitely return!"</p>
       <div class="review-footer">
         <div class="verified-badge"><div class="verified-dot"></div> Verified</div>
         <span class="review-date">Feb 2025</span>
@@ -626,12 +629,9 @@
   </div>
 </div>
 
-<!-- WADAH FOOTER GLOBAL -->
+<!-- FOOTER -->
 <div id="global-footer" class="footer"></div>
-
-<!-- SCRIPT PEMANGGIL FOOTER -->
 <script src="footer.js"></script>
-
 
 <!-- MODAL -->
 <div class="modal-overlay" id="reviewModal">
@@ -644,7 +644,7 @@
     <div class="form-group">
       <label class="form-label">Member Code *</label>
       <input class="form-input" type="text" id="refNumber" placeholder="e.g. VLX-XXXX">
-      <p class="form-note">🔒 Your member code was provided after your experience with us.</p>
+      <p class="form-note">🔒 Your member code was shared after your experience with us.</p>
     </div>
 
     <div class="form-group">
@@ -657,16 +657,13 @@
       <textarea class="form-textarea" id="reviewText" placeholder="Share your experience..."></textarea>
     </div>
 
-    <div class="form-error" id="formError">
-      ❌ Invalid member code. Please check your participation details and try again.
-    </div>
+    <div class="form-error" id="formError"></div>
 
     <button class="form-submit" onclick="submitReview()">Submit Review</button>
   </div>
 </div>
 
 <script>
-  // Make Leave a Review button clickable
   document.querySelector('.review-btn').style.pointerEvents = 'auto';
   document.querySelector('.review-btn').style.cursor = 'pointer';
   document.querySelector('.review-btn').style.opacity = '1';
@@ -698,7 +695,6 @@
       return;
     }
 
-    // Always invalid — no real member codes exist
     error.textContent = '❌ Invalid member code. Please check your participation details and try again.';
     error.classList.add('show');
   }
