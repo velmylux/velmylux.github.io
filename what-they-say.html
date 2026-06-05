@@ -31,21 +31,20 @@
     overflow-x: hidden;
   }
 
-  /* BACK BUTTON — bottom, like other pages */
   .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-mid);
+    display: inline-block;
     text-decoration: none;
+    color: var(--text-mid);
+    font-weight: 500;
+    font-size: 0.9rem; /* Samakan dengan size di terms.html */
+    letter-spacing: 1px;
     transition: color 0.2s;
-  }
+    text-transform: none; /* Ubah ke none agar tidak terlalu kaku jika diinginkan */
+}
 
-  .back-btn:hover { color: var(--text); }
+.back-btn:hover {
+    color: var(--bg-dark);
+}
 
   .hero {
     background: var(--bg-dark);
@@ -513,7 +512,6 @@
 
 <!-- HERO -->
 <div class="hero">
-  <a href="./index.html" class="back-btn">← Back</a>
   <div class="hero-eyebrow">velmylux · community reviews</div>
   <h1 class="hero-title">What They <em>Say</em></h1>
   <p class="hero-sub">Real stories from our community</p>
@@ -627,6 +625,10 @@
     <br>
     <div class="review-btn">Leave a Review</div>
   </div>
+</div>
+
+ <div style="margin-top: 40px; text-align: center; padding-bottom: 40px;">
+  <a href="./index.html" class="back-btn">← Back to Community</a>
 </div>
 
 <!-- FOOTER -->
