@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 margin-bottom: 14px;
                 opacity: 0.7;
             ">
-                <a href="https://instagram.com/velmylux" target="_blank" style="color:#C9B8AE;text-decoration:none;font-weight:500;letter-spacing:1.5px;">Instagram · @velmylux</a>
+                <a href="https://instagram.com/velmylux" target="_blank" rel="noopener noreferrer" style="color:#C9B8AE;text-decoration:none;font-weight:500;letter-spacing:1.5px;">Instagram · @velmylux</a>
             </div>
 
             <nav style="
